@@ -15,7 +15,7 @@ namespace ProductsFunctionApp.Functions
     {
         [FunctionName("DeleteProduct")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "delete", Route = "products")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = "products")] HttpRequest req,
             ILogger log)
         {
             int.TryParse(req.Query["id"], out int id);

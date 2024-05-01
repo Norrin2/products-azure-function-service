@@ -18,7 +18,7 @@ namespace ProductsFunctionApp.Functions
     {
         [FunctionName("FindProduct")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "products")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "products")] HttpRequest req,
             ILogger log)
         {
             int.TryParse(req.Query["id"], out int id);
